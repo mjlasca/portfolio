@@ -1,0 +1,72 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import { projects } from '../../data/projects';
+
+export function getStaticPaths() {
+  return projects.map((project) => ({ params: { slug: project.slug }, props: { project } }));
+}
+
+const { project } = Astro.props;
+  if (!project) throw new Error('Proyecto no encontrado');
+const currentIndex = projects.findIndex((item) => item.slug === project.slug);
+const nextProject = projects[(currentIndex + 1) % projects.length];
+---
+
+<Layout title={`${project.title} — Mario Lasluisa`} description={project.summary} accent={project.accent}>
+  <Header />
+  <main class="case-study" style={`--project-accent: ${project.accent}`}>
+    <section class="case-hero">
+      <div class="case-hero__heading">
+        <p class="eyebrow">{project.eyebrow}</p>
+        <h1>{project.title}</h1>
+        <p class="case-hero__summary">{project.summary}</p>
+      </div>
+      <div class="case-hero__image">
+        <img src={project.cover} alt={`Resumen visual de ${project.title}`} />
+      </div>
+    </section>
+
+    <div class="case-layout">
+      <aside class="case-sidebar">
+       <a class="back-link" href="/#work">← Todo el trabajo</a>
+       <nav aria-label="Secciones del caso de estudio">
+          {project.sections.map((section) => <a href={`#${section.id}`}>{section.label}</a>)}
+        </nav>
+        <div class="case-sidebar__details">
+          <span>Rol</span><strong>{project.role}</strong>
+          <span>Año</span><strong>{project.year}</strong>
+          <span>Servicios</span><strong>{project.services.join(' · ')}</strong>
+        </div>
+      </aside>
+
+      <article class="case-content">
+        <div class="case-intro" data-reveal>
+          <p class="case-label">Resumen</p>
+          <p class="case-lead">{project.overview}</p>
+          <div class="case-intro__columns">
+            <div><span>El reto</span><p>{project.challenge}</p></div>
+            <div><span>El resultado</span><p>{project.result}</p></div>
+          </div>
+        </div>
+
+        {project.sections.map((section) => (
+          <section class="case-section" id={section.id} data-reveal>
+            <div class="case-section__heading">
+              <p class="case-label">{section.label}</p>
+              <h2>{section.title}</h2>
+            </div>
+            <p class="case-section__body">{section.body}</p>
+            {section.image && <img class="case-section__image" src={section.image} alt={`Detalle del proyecto: ${section.title}`} loading="lazy" />}
+          </section>
+        ))}
+
+        <a class="next-project" href={`/work/${nextProject.slug}`}>
+          <span>Siguiente caso de estudio</span>
+          <strong>{nextProject.title} <i>↗</i></strong>
+        </a>
+      </article>
+    </div>
+  </main>
+  <div class="progress-track" aria-hidden="true"><span data-progress></span></div>
+</Layout>

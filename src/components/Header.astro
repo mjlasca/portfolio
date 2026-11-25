@@ -1,0 +1,25 @@
+---
+interface Props {
+  dark?: boolean;
+}
+
+const { dark = false } = Astro.props;
+---
+
+<header class:list={['site-header', { 'site-header--dark': dark }] }>
+  <a class="brand" href="/" aria-label="Inicio de Mario Lasluisa">
+    <span class="brand-mark">ML</span>
+    <span class="brand-name">Mario<br />Lasluisa</span>
+  </a>
+  <a class="availability" href="mailto:mjlasca@gmail.com">
+    <span class="availability-dot"></span>
+    Disponible para oportunidades backend
+  </a>
+  <nav class="main-nav" aria-label="Navegación principal">
+    <a href="/#about">Sobre mí</a>
+    <a href="/#work">Trabajo</a>
+    <a href="/#experience">Experiencia</a>
+    <a href="/#contact">Contacto</a>
+    <a href="/cv-mario-lasluisa.pdf" download>CV ↘</a>
+  </nav>
+</header>

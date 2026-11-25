@@ -1,0 +1,57 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  accent?: string;
+}
+
+const {
+  title = 'Mario Lasluisa Castaño — Desarrollador de software backend',
+  description = 'Desarrollador de software backend especializado en PHP, Drupal, Laravel y APIs REST.',
+  accent = '#d86672',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#111820" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>{title}</title>
+  </head>
+  <body style={`--accent: ${accent}`}>
+    <slot />
+    <script>
+      const revealItems = document.querySelectorAll('[data-reveal]');
+      const progress = document.querySelector('[data-progress]');
+
+      if (revealItems.length && 'IntersectionObserver' in window) {
+        const revealObserver = new IntersectionObserver(
+          (entries) => entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              revealObserver.unobserve(entry.target);
+            }
+          }),
+          { threshold: 0.12 },
+        );
+        revealItems.forEach((item) => revealObserver.observe(item));
+      } else {
+        revealItems.forEach((item) => item.classList.add('is-visible'));
+      }
+
+      const updateProgress = () => {
+        if (!progress) return;
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        progress.style.transform = `scaleX(${max > 0 ? window.scrollY / max : 0})`;
+      };
+      window.addEventListener('scroll', updateProgress, { passive: true });
+      updateProgress();
+    </script>
+  </body>
+</html>
