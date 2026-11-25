@@ -11,6 +11,7 @@ const { project } = Astro.props;
   if (!project) throw new Error('Proyecto no encontrado');
 const currentIndex = projects.findIndex((item) => item.slug === project.slug);
 const nextProject = projects[(currentIndex + 1) % projects.length];
+const base = import.meta.env.BASE_URL;
 ---
 
 <Layout title={`${project.title} — Mario Lasluisa`} description={project.summary} accent={project.accent}>
@@ -29,7 +30,7 @@ const nextProject = projects[(currentIndex + 1) % projects.length];
 
     <div class="case-layout">
       <aside class="case-sidebar">
-       <a class="back-link" href="/#work">← Todo el trabajo</a>
+       <a class="back-link" href={`${base}#work`}>← Todo el trabajo</a>
        <nav aria-label="Secciones del caso de estudio">
           {project.sections.map((section) => <a href={`#${section.id}`}>{section.label}</a>)}
         </nav>
@@ -61,7 +62,7 @@ const nextProject = projects[(currentIndex + 1) % projects.length];
           </section>
         ))}
 
-        <a class="next-project" href={`/work/${nextProject.slug}`}>
+        <a class="next-project" href={`${base}work/${nextProject.slug}/`}>
           <span>Siguiente caso de estudio</span>
           <strong>{nextProject.title} <i>↗</i></strong>
         </a>

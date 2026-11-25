@@ -4,6 +4,8 @@ import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import { projects } from '../data/projects';
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <Layout>
@@ -52,39 +54,13 @@ import { projects } from '../data/projects';
       </div>
     </section>
 
-    <section class="experience-section content-section" id="experience" data-reveal>
-      <div class="section-kicker"><span>04</span><span>Experiencia y formación</span></div>
-      <div class="experience-list">
-        <article class="experience-item">
-          <div class="experience-item__date">Oct 2022<br />— Jul 2026</div>
-          <div>
-            <h2>Esinergia SAS</h2>
-            <p class="experience-item__role">Desarrollador de software backend · Remoto</p>
-            <p>Desarrollo backend empresarial con PHP y Drupal 9, 10 y 11. Módulos personalizados, servicios desacoplados, integraciones con terceros, migraciones de Drupal, Apache Solr, calidad de código y flujos CI/CD en Acquia.</p>
-          </div>
-        </article>
-        <article class="experience-item">
-          <div class="experience-item__date">Oct 2017<br />— Mar 2022</div>
-          <div>
-            <h2>EspecialistasenExcel.com</h2>
-            <p class="experience-item__role">Desarrollador de software freelance · Remoto</p>
-            <p>APIs con Laravel, un ERP propio con React e Inertia.js, aplicaciones de escritorio con C# y .NET Framework, automatización de flujos de trabajo e integración con impresoras, cámaras y lectores de huella.</p>
-          </div>
-        </article>
-      </div>
-      <div class="credentials">
-        <div><span>Certificación</span><a href="https://certification.acquia.com/person/certified/mario-lasluisa" target="_blank" rel="noreferrer">Acquia Certified Drupal Site Builder ↗</a><small>27 de septiembre de 2024</small></div>
-        <div><span>Formación</span><strong>Tecnólogo en Sistemas</strong><small>Corporación Universitaria Minuto de Dios · Cali · 2014—17</small></div>
-      </div>
-    </section>
-
     <section class="contact-section content-section" id="contact" data-reveal>
       <div class="section-kicker"><span>05</span><span>¿Tienes un reto backend?</span></div>
-      <h2>Construyamos<br /><em>algo sólido.</em></h2>
+      <h2>Let’s build<br /><em> something solid.</em></h2>
       <a class="contact-email" href="mailto:mjlasca@gmail.com">mjlasca@gmail.com <span>↗</span></a>
       <div class="contact-footer">
         <span>© 2026 Mario Lasluisa · Cali, Colombia</span>
-        <div><a href="tel:+573016735425">+57 301 6734525</a><a href="/cv-mario-lasluisa.pdf" download>Descargar CV</a></div>
+        <div><a href="tel:+573016735425">+57 301 6734525</a><a href={`${base}cv-mario-lasluisa.pdf`} download>Descargar CV</a></div>
       </div>
     </section>
   </main>
