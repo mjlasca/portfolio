@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Mario Lasluisa Castaño — CV</title>
+  <style>
+    @page { size: A4; margin: 0; }
+    :root {
+      --ink: #182027;
+      --muted: #5e666b;
+      --line: #d8dadd;
+      --accent: #c85663;
+      --paper: #ffffff;
+      --soft: #f3f4f2;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: #e4e6e4; color: var(--ink); font-family: Arial, Helvetica, sans-serif; }
+    body { font-size: 9.1pt; line-height: 1.32; }
+    a { color: inherit; text-decoration: none; }
+    .page { position: relative; width: 210mm; min-height: 297mm; margin: 12mm auto; padding: 12mm 16mm 12mm; background: var(--paper); overflow: hidden; }
+    .page::before { position: absolute; top: 0; left: 0; width: 7mm; height: 100%; background: var(--ink); content: ''; }
+    .page-inner { position: relative; margin-left: 5mm; }
+    .header { display: flex; justify-content: space-between; gap: 16mm; padding-bottom: 8mm; border-bottom: 1px solid var(--ink); }
+    .name { margin: 0; font-size: 25pt; line-height: .94; letter-spacing: -.045em; text-transform: uppercase; }
+    .role { margin: 4mm 0 0; color: var(--accent); font-size: 10.5pt; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    .speciality { margin: 2mm 0 0; color: var(--muted); font-size: 8.8pt; }
+    .contact { min-width: 49mm; padding-top: 1mm; color: var(--muted); font-size: 8.5pt; line-height: 1.55; text-align: right; }
+    .contact a { border-bottom: 1px solid #b9bec0; }
+    .section { margin-top: 7mm; }
+    .section-title { display: flex; align-items: baseline; gap: 4mm; margin: 0 0 4mm; font-size: 9pt; letter-spacing: .12em; text-transform: uppercase; }
+    .section-title::before { width: 9mm; height: 2px; background: var(--accent); content: ''; }
+    .profile { max-width: 165mm; margin: 0; font-size: 9.8pt; line-height: 1.38; }
+    .job { display: grid; grid-template-columns: 37mm 1fr; gap: 7mm; margin-top: 4.5mm; padding-top: 3mm; border-top: 1px solid var(--line); }
+    .job:first-of-type { border-top: 0; padding-top: 0; }
+    .job-date { color: var(--accent); font-size: 8.4pt; font-weight: 700; line-height: 1.35; text-transform: uppercase; }
+    .job-date span { display: block; margin-top: 1mm; color: var(--muted); font-weight: 400; text-transform: none; }
+    .job h3 { margin: 0; font-size: 12pt; line-height: 1.1; }
+    .job-role { margin: 1mm 0 2.5mm; color: var(--muted); font-size: 8.8pt; font-style: italic; }
+    ul { margin: 0; padding-left: 4.5mm; }
+    li { margin: 0 0 1mm; padding-left: 1mm; }
+    li::marker { color: var(--accent); }
+    .stack { margin: 2mm 0 0; color: var(--muted); font-size: 8.5pt; }
+    .stack strong { color: var(--ink); }
+    .project { display: grid; grid-template-columns: 1fr 45mm; gap: 7mm; padding: 4mm; background: var(--soft); border-left: 3px solid var(--accent); }
+    .project h3 { margin: 0 0 1mm; font-size: 12pt; }
+    .project p { margin: 0 0 2mm; color: var(--muted); }
+    .project-links { font-size: 8.2pt; line-height: 1.55; overflow-wrap: anywhere; }
+    .project-links a { color: #9e3d49; text-decoration: underline; }
+    .mcp-note { font-size: 7.7pt; }
+    .columns { display: grid; grid-template-columns: 1fr 1fr; gap: 12mm; }
+    .skill-group { margin: 0 0 4mm; }
+    .skill-group h3 { margin: 0 0 1mm; font-size: 9pt; }
+    .skill-group p { margin: 0; color: var(--muted); }
+    .credential { display: grid; grid-template-columns: 1fr auto; gap: 4mm; padding: 2.5mm 0; border-bottom: 1px solid var(--line); }
+    .credential strong { display: block; font-size: 9.5pt; }
+    .credential small { color: var(--muted); }
+    .credential time { color: var(--accent); font-size: 8.5pt; text-align: right; }
+    .footer { position: absolute; right: 16mm; bottom: 9mm; left: 21mm; display: flex; justify-content: space-between; color: var(--muted); font-size: 7.5pt; }
+    .page-break { page-break-before: always; }
+    @media print {
+      html, body { background: #fff; }
+      .page { margin: 0; }
+    }
+  </style>
+</head>
+<body>
+  <section class="page">
+    <div class="page-inner">
+      <header class="header">
+        <div>
+          <h1 class="name">Mario Lasluisa<br>Castaño</h1>
+          <p class="role">Desarrollador de software full-stack</p>
+          <p class="speciality">PHP · Laravel · Drupal · React · APIs REST · Astro</p>
+        </div>
+        <div class="contact">
+          <a href="mailto:mjlasca@gmail.com">mjlasca@gmail.com</a><br>
+          <a href="tel:+573016735425">+57 301 6734525</a><br>
+          Cali, Colombia
+        </div>
+      </header>
+
+      <section class="section">
+        <h2 class="section-title">Perfil</h2>
+        <p class="profile">Desarrollador de software full-stack con amplia experiencia construyendo aplicaciones empresariales, APIs e integraciones entre sistemas. Más de cuatro años de experiencia profesional con Laravel y experiencia en proyectos con Laravel 8-13, Eloquent ORM, autenticación, Sanctum, Passport, React, Inertia.js, Livewire y Tailwind CSS. Experiencia enterprise en proyectos Drupal, arquitectura basada en servicios, principios SOLID, CI/CD y calidad de software.</p>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Experiencia laboral</h2>
+
+        <article class="job">
+          <div class="job-date">Oct 2022<br>— Jul 2026<span>Remoto · Tiempo completo</span></div>
+          <div>
+            <h3>Esinergia SAS</h3>
+            <p class="job-role">Desarrollador de software backend</p>
+            <ul>
+              <li>Desarrollo, mantenimiento y evolución de aplicaciones empresariales con PHP y Drupal 9, 10 y 11, mediante módulos personalizados y servicios desacoplados.</li>
+              <li>Aplicación de principios SOLID, inyección de dependencias y arquitectura basada en servicios para construir soluciones mantenibles y escalables.</li>
+              <li>Desarrollo de servicios para exponer información de Drupal a sistemas externos e integración con APIs de terceros para procesar información y crear entidades.</li>
+              <li>Participación en migraciones de plataformas Drupal 7 a Drupal 10 y desarrollo de funcionalidades de búsqueda con Apache Solr.</li>
+              <li>Revisión de código, análisis estático, mejora continua de la calidad del código y trabajo con flujos CI/CD y la plataforma Acquia.</li>
+              <li>Participación en decisiones de arquitectura, planificación de sprints y revisión de soluciones técnicas con equipos multidisciplinarios.</li>
+            </ul>
+            <p class="stack"><strong>Stack:</strong> PHP, Drupal 9/10/11, MySQL, MariaDB, Apache Solr, JavaScript, Git, Linux, Docker, Composer, Acquia, CI/CD.</p>
+          </div>
+        </article>
+
+        <article class="job">
+          <div class="job-date">Oct 2017<br>— Mar 2022<span>Freelance · Remoto</span></div>
+          <div>
+            <h3>EspecialistasenExcel.com</h3>
+            <p class="job-role">Desarrollador de software</p>
+            <ul>
+              <li>Desarrollo full-stack de aplicaciones y servicios principalmente con Laravel 8, utilizando Eloquent ORM, Query Builder y una arquitectura orientada a servicios.</li>
+              <li>Implementación de autenticación y autorización con las herramientas de Laravel, Laravel Sanctum y Laravel Passport para aplicaciones web y APIs REST.</li>
+              <li>Diseño y desarrollo de APIs REST para conectar aplicaciones web, aplicaciones de escritorio y plataformas externas.</li>
+              <li>Desarrollo de interfaces y flujos de trabajo con React e Inertia.js, además de trabajo con Livewire en proyectos web.</li>
+              <li>Uso de Tailwind CSS en diferentes proyectos web para construir interfaces responsivas y sistemas visuales consistentes.</li>
+              <li>Desarrollo de aplicaciones de escritorio con C# y .NET Framework, automatización de procesos e integración con impresoras, cámaras y lectores de huella mediante SDKs especializados.</li>
+            </ul>
+            <p class="stack"><strong>Stack:</strong> PHP, Laravel 8, Eloquent, Query Builder, Sanctum, Passport, React, Inertia.js, Livewire, Tailwind CSS, C#, .NET Framework, JavaScript, APIs REST, MySQL, SQLite, SQL Server.</p>
+          </div>
+        </article>
+      </section>
+    </div>
+    <footer class="footer"><span>Mario Lasluisa Castaño</span><span>01 / 02</span></footer>
+  </section>
+
+  <section class="page page-break">
+    <div class="page-inner">
+      <section class="section" style="margin-top: 0">
+        <h2 class="section-title">Proyecto destacado</h2>
+        <div class="project">
+          <div>
+            <h3>ERP empresarial · Laravel + React</h3>
+            <p>Proyecto de portafolio que documenta el desarrollo de un ERP y sus integraciones, con una interfaz web y un servidor MCP para interactuar con el sistema mediante herramientas compatibles.</p>
+            <p><strong>Contribución:</strong> backend, APIs REST, autenticación, integración de sistemas, frontend y evolución de la plataforma.</p>
+          </div>
+          <div class="project-links">
+            <strong>Demo / portafolio</strong><br>
+            <a href="https://erpsi.niveldigitalcol.com/">erpsi.niveldigitalcol.com</a><br><br>
+            <strong>Servidor MCP</strong><br>
+            <a href="https://erpsi.niveldigitalcol.com/mcperp">erpsi.niveldigitalcol.com/mcperp</a>
+            <p class="mcp-note">Endpoint técnico para clientes MCP; requiere un cliente compatible.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Competencias técnicas</h2>
+        <div class="columns">
+          <div>
+            <div class="skill-group"><h3>Backend</h3><p>PHP, Laravel 8/10/12/13, Drupal 9/10/11, C#, .NET Framework.</p></div>
+            <div class="skill-group"><h3>Arquitectura y APIs</h3><p>SOLID, inyección de dependencias, Eloquent ORM, Query Builder, APIs REST, servicios desacoplados.</p></div>
+            <div class="skill-group"><h3>Autenticación</h3><p>Laravel Authentication, Sanctum, Passport.</p></div>
+            <div class="skill-group"><h3>Frontend</h3><p>JavaScript, React, Vue, Inertia.js, Livewire, Tailwind CSS.</p></div>
+          </div>
+          <div>
+            <div class="skill-group"><h3>Bases de datos</h3><p>MySQL, MariaDB, SQLite, SQL Server.</p></div>
+            <div class="skill-group"><h3>Infraestructura</h3><p>Acquia, Docker, Linux, Composer, Git, CI/CD, AWS (conocimientos básicos).</p></div>
+            <div class="skill-group"><h3>Búsqueda y testing</h3><p>Apache Solr, PHPUnit, Pest, Playwright.</p></div>
+            <div class="skill-group"><h3>Prácticas</h3><p>Revisión de código, análisis estático, migraciones y trabajo colaborativo con equipos multidisciplinarios.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Formación y certificación</h2>
+        <div class="credential"><div><strong>Acquia Certified Drupal Site Builder</strong><small><a href="https://certification.acquia.com/person/certified/mario-lasluisa">Ver certificación ↗</a></small></div><time>27 sep. 2024</time></div>
+        <div class="credential"><div><strong>Tecnólogo en Sistemas</strong><small>Corporación Universitaria Minuto de Dios · Cali, Colombia</small></div><time>2014—17</time></div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Portfolio y contacto</h2>
+        <p class="profile">Portfolio: <a href="https://niveldigitalcol.com/mario-lasluisa/"><u>niveldigitalcol.com/mario-lasluisa</u></a></p>
+        <p class="profile" style="margin-top: 2mm">Disponible para oportunidades de desarrollo backend, Laravel, APIs e integración de sistemas.</p>
+      </section>
+    </div>
+    <footer class="footer"><span>mjlasca@gmail.com · Cali, Colombia</span><span>02 / 02</span></footer>
+  </section>
+</body>
+</html>

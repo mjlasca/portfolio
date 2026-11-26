@@ -22,6 +22,11 @@ const base = import.meta.env.BASE_URL;
         <p class="eyebrow">{project.eyebrow}</p>
         <h1>{project.title}</h1>
         <p class="case-hero__summary">{project.summary}</p>
+        {project.links && (
+          <div class="case-project-links">
+            {project.links.map((link) => <a href={link.url} target="_blank" rel="noreferrer">{link.label} ↗</a>)}
+          </div>
+        )}
       </div>
       <div class="case-hero__image">
         <img src={project.cover} alt={`Resumen visual de ${project.title}`} />

@@ -12,6 +12,10 @@ export type Project = {
   overview: string;
   challenge: string;
   result: string;
+  links?: {
+    label: string;
+    url: string;
+  }[];
   sections: {
     id: string;
     label: string;
@@ -21,26 +25,81 @@ export type Project = {
   }[];
 };
 
-// Estos casos de estudio se basan en la experiencia profesional de Mario.
-// Se pueden añadir nombres de clientes, capturas privadas y métricas cuando estén disponibles.
 export const projects: Project[] = [
   {
-    slug: 'enterprise-drupal-platforms',
+    slug: 'laravel-erp',
     number: '01',
+    title: 'ERP Laravel y MCP',
+    eyebrow: 'SaaS',
+    summary: 'Un sistema ERP que conecta flujos de negocio, interfaz desarrollada con React e inertia.js.',
+    year: '2026',
+    role: 'Desarrollador full-stack',
+    services: ['Laravel', 'React', 'Inertia.js', 'MCP'],
+    links: [
+      { label: 'Ver ERP', url: 'https://erpsi.niveldigitalcol.com/' },
+      { label: 'Servidor MCP', url: 'https://erpsi.niveldigitalcol.com/mcperp' },
+    ],
+    cover: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1800&q=85',
+    accent: '#7194a2',
+    overview:
+      'Aplicación web en laravel con servidor MCP integrado',
+    challenge:
+      'Desarrollo con agentes, arquitectura modular para agregar funcionalidades en el futuro, servidor MCP con autenticación y consulta de acuerdo a roles y empresas.',
+    result:
+      'ERP que se ajusta específicamente a las necesidades de mis clientes, el desarrollo es simple pero se contruye para funcionar como un SaaS, los clientes (administradores) consultan información de su empresa de forma dinámica desde chatgpt con el MCP.',
+    sections: [
+      {
+        id: 'context',
+        label: '01 — Contexto',
+        title: 'ERP para PYMES.',
+        body: 'El ERP nación como una necesidad para negocios locales de familiares, se hizo un levantamiento de requerimientos para levantar un MVP e ir agregando diferentes funcionalidades en el proceso de uso.',
+        image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1400&q=85',
+      },
+      {
+        id: 'architecture',
+        label: '02 — Arquitectura',
+        title: 'Monolito modular por capas',
+        body: 'Hice el desarrollo con IA, usando diferentes skills, entre ellas las que laravel recomienda en su versión 13, una arquitectura con monolito modular por capas para separar la lógica de negocio, para el MCP usé la configuración de las últimas versiones de laravel, creé servicios especificamente para el servidor MCP y agregué autenticación passport, además, las consultas desde los modelos determina con la autenticación el rol y la empresa a la que pertenece para consultar sólo lo que le corresponde.',
+        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=85',
+      },
+      {
+        id: 'outcome',
+        label: '03 — Resultado',
+        title: 'Un producto construido alrededor de la operación real.',
+        body: 'EL ERP facilita la administración y la consolidación de la información de las PYMES en cuestión. El proyecto incorpora un servidor MCP como extensión técnica del ERP, además como un plus para los administradores de las empresas para realizar diferentes consultas de su empresa en el ERP.',
+        image: 'https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1400&q=85',
+      },
+      {
+        id: 'delivery',
+        label: '03 — Entrega',
+        title: 'Automatización de la calidad con lupa.',
+        body: 'Se crearon pruebas unitarias y e2e generadas con IA y auditadas antes de pasos a producción, CI/CD.',
+        image: 'https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1400&q=85',
+      },
+    ],
+  },
+  {
+    slug: 'enterprise-drupal-platforms',
+    number: '02',
     title: 'Drupal empresarial',
     eyebrow: 'Arquitectura backend / 2022—26',
     summary: 'Plataformas Drupal escalables, módulos personalizados y servicios para aplicaciones empresariales.',
     year: '2022—26',
     role: 'Desarrollador de software backend',
     services: ['PHP', 'Drupal 9/10/11', 'Arquitectura'],
+    links: [
+      { label: 'Fundación Santafe de bogotá (Módulos custom, Integraciones, Notificaciones)', url: 'https://fundacionsantafedebogota.com' },
+      { label: 'Redsalud Chile (Módulos custom, Integraciones, Buscador Solr)', url: 'https://www.redsalud.cl/' },
+      { label: 'Unisversidad de la sabana (Módulos custom, Integración de calendario con Teams y servicio custom)', url: 'https://campusvirtual.unisabana.edu.co' },
+    ],
     cover: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1800&q=85',
     accent: '#d86672',
     overview:
-      'En Esinergia SAS, Mario desarrolla, mantiene y evoluciona aplicaciones empresariales utilizando PHP y Drupal. Su trabajo combina módulos personalizados, servicios desacoplados y un fuerte enfoque en una arquitectura mantenible.',
+      'DRUPAL Enterprise',
     challenge:
-      'Las plataformas empresariales deben evolucionar sin perder estabilidad. El trabajo implica dar soporte a productos existentes, ampliar las capacidades de Drupal y conectarlo con sistemas externos manteniendo una base de código comprensible.',
+      'Análisis y desarrollo de proyectos enterprise en Drupal, módulos personalizados, arquitectura basada en servicios y principios solid, despliegue en Acquia Cloud, CI/CD',
     result:
-      'Una práctica backend basada en principios SOLID, inyección de dependencias, arquitectura orientada a servicios y decisiones técnicas colaborativas.',
+      'Una práctica backend basada en principios SOLID, inyección de dependencias, arquitectura orientada a servicios y decisiones técnicas colaborativas. El trabajo incluye revisión de código, análisis estático, flujos CI/CD y administración de entornos en Acquia.',
     sections: [
       {
         id: 'context',
@@ -73,63 +132,22 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: 'laravel-erp',
-    number: '02',
-    title: 'ERP con Laravel',
-    eyebrow: 'Aplicación empresarial / 2017—22',
-    summary: 'Un sistema ERP que conecta flujos de negocio, APIs y una interfaz desarrollada con React.',
-    year: '2017—22',
-    role: 'Desarrollador backend freelance',
-    services: ['Laravel', 'React', 'Inertia.js'],
-    cover: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1800&q=85',
-    accent: '#7194a2',
-    overview:
-      'Como desarrollador freelance en EspecialistasenExcel.com, Mario diseñó y desarrolló un ERP propio utilizando Laravel, React e Inertia.js, junto con APIs que conectaban diferentes sistemas empresariales.',
-    challenge:
-      'El sistema debía reunir información operativa y flujos de trabajo diarios en una sola aplicación, además de comunicarse con aplicaciones de escritorio y plataformas externas.',
-    result:
-      'Una aplicación empresarial desarrollada sobre APIs de Laravel y una interfaz en React, con una base preparada para evolucionar junto con los procesos del negocio.',
-    sections: [
-      {
-        id: 'context',
-        label: '01 — Contexto',
-        title: 'Un sistema para varios flujos de trabajo.',
-        body: 'El ERP se creó para centralizar las operaciones del negocio en una sola aplicación web. El trabajo cubrió desarrollo backend, modelado de datos y conexión entre la aplicación y otros servicios.',
-        image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1400&q=85',
-      },
-      {
-        id: 'architecture',
-        label: '02 — Arquitectura',
-        title: 'Las APIs como tejido conectivo.',
-        body: 'Los servicios Laravel proporcionaron una capa backend clara para la interfaz desarrollada con React e Inertia.js. También se crearon APIs para conectar aplicaciones de escritorio con servicios backend y plataformas externas.',
-        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=85',
-      },
-      {
-        id: 'outcome',
-        label: '03 — Resultado',
-        title: 'Un producto construido alrededor de la operación real.',
-        body: 'La experiencia reunió los procesos del negocio en un sistema más coherente y creó una base backend reutilizable para futuras funcionalidades, integraciones y tareas de mantenimiento.',
-        image: 'https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1400&q=85',
-      },
-    ],
-  },
-  {
     slug: 'integrated-desktop-systems',
     number: '03',
     title: 'Sistemas integrados',
-    eyebrow: 'Escritorio y hardware / 2017—22',
-    summary: 'Herramientas de escritorio y servicios backend que conectan pólizas, flujos de impresión y hardware.',
+    eyebrow: 'Escritorio APIs / SDK hardware / 2020-26',
+    summary: 'Aplicaciones de escritorio que integran APIs y SDKs de hardware.',
     year: '2017—22',
     role: 'Desarrollador de software',
-    services: ['C#', '.NET Framework', 'Windows Forms'],
+    services: ['C#', '.NET Framework', 'Windows Forms', 'Laravel', 'API REST', 'SDKs de hardware'],
     cover: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1800&q=85',
     accent: '#d6a05d',
     overview:
-      'Mario desarrolló aplicaciones de escritorio que se comunicaban con servicios backend y hardware especializado. El trabajo incluyó un sistema de generación de pólizas de seguros y un sistema de gestión de flujos para una imprenta.',
+      'Escritorio con aplicaciones web y periféricos integrados',
     challenge:
-      'Estas herramientas debían funcionar de forma confiable entre el software, los servicios backend y dispositivos físicos como impresoras, cámaras y lectores de huella, a menudo mediante SDKs específicos de cada proveedor.',
+      'Desarrollo de aplicaciones de escritorio que conectan flujos de negocio con servicios backend y hardware, incluyendo impresoras, cámaras y lectores de huella. Aplicaciones que comunican APIs externas para sincronización de información entre puntos de venta.',
     result:
-      'Software práctico que conecta personas, procesos y hardware, considerando desde el inicio el mantenimiento y la evolución de las aplicaciones.',
+      'Software práctico que conecta personas, procesos y hardware, considerando desde el análisis, implementación, soporte y la evolución de las aplicaciones.',
     sections: [
       {
         id: 'context',
